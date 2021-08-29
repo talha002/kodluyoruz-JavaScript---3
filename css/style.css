@@ -25,8 +25,35 @@ h2 {
   align-items: center;
   margin: 40px 0;
 }
+
+.btn-container button:hover {
+  background-color: black;
+  color: white;
+}
+
+.btn-container button:focus {
+  outline: none;
+}
+
+.pressed{
+  -webkit-box-shadow: 0px 0px 14px 4px rgba(0,0,0,0.58); 
+  box-shadow: 0px 0px 14px 4px rgba(0,0,0,0.58)
+}
+
+.btn-container button:active {
+  background: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+  -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+  outline: none;
+}
+
 .btn-item {
   margin-left: 15px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 15px;
+  border: 1px solid black;
 }
 
 .photo {

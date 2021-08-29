@@ -82,19 +82,40 @@ const menu = [
   },
 ];
 
-/* Butonları ekleme */
+/* Butonların eklenmesi için gerekli olan kodlar */
 const buttonsContainerDOM = document.querySelector(".btn-container");
 const buttons = ["All", "Korean", "Japan", "Chinese"];
 
 buttons.forEach(item => {
   const buttonDOM = document.createElement("button");
   buttonDOM.classList.add("btn-item");
-  buttonDOM.setAttribute("onclick", `${item}()`)
+  buttonDOM.setAttribute("onclick", `${item}(), pressed(this)`);
   buttonDOM.innerHTML = item;
   buttonsContainerDOM.append(buttonDOM)
 });
 
-/* Kategorilere göre menülerin tanımlanması */
+/* Butonların stili için gerekli olan kodlar */
+let unpressedButtons = document.querySelectorAll(".btn-item");
+unpressedButtons.forEach(myFunction)
+
+function myFunction(item) {
+  unpressedButtonClasses = item.classList.value
+}
+
+function pressed(item) {
+  let unpressedButtons = document.querySelectorAll(".btn-item");
+  unpressedButtons.forEach(myFunction)
+
+  function myFunction(element) {
+    unpressedButtonClasses = element.classList
+    if (unpressedButtonClasses.value.includes("pressed")){
+      unpressedButtonClasses.value = "btn-item"
+    }
+  }
+  item.classList.add("pressed")
+}
+
+/* Kategorilere göre menülerin tanımlanması için gerekli olan kodlar*/
 let menuKorean = []
 let menuJapan = []
 let menuChinese = []
@@ -111,7 +132,7 @@ for (let i = 0; i < menu.length; i++) {
   };
 }
 
-/* Menülerin eklenmesi */
+/* Menülerin eklenmesi için gerekli olan fonksiyonlar */
 function All() {
   let sectionDOM = document.querySelector(".menu");
   let oldMenuContainerDOM = document.querySelector("#menu-container");
