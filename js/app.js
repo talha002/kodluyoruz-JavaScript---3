@@ -89,9 +89,34 @@ const buttons = ["All", "Korean", "Japan", "Chinese"];
 buttons.forEach(item => {
   const buttonDOM = document.createElement("button");
   buttonDOM.classList.add("btn-item");
+  buttonDOM.setAttribute("onclick", `${item}()`)
   buttonDOM.innerHTML = item;
   buttonsContainerDOM.append(buttonDOM)
 });
 
-/*  */
+/* Menülerin eklenmesi */
+const menuContainerDOM = document.querySelector("#menu-container")
 
+function All() {
+  for (let i = 0; i < menu.length; i++) {
+    let menuDOM = menu[i];
+    let titleDOM = menuDOM.title;
+    let priceDOM = menuDOM.price;
+    let imgDOM = menuDOM.img;
+    let descDOM = menuDOM.desc;
+    menuItemsDOM = document.createElement("div");
+    menuItemsDOM.classList.add("menu-items","col-lg-6", "col-sm-12");
+    menuItemsDOM.innerHTML = `
+    <img src="${imgDOM}" alt="${titleDOM}" class="photo">
+    <div class="menu-info">
+      <div class="menu-title">
+        <h4>${titleDOM}</h4>
+        <h4 class="price">${priceDOM}</h4>
+      </div>
+      <div class="menu-text">
+        ${descDOM}
+      </div>
+    </div>`;
+    menuContainerDOM.append(menuItemsDOM)
+ }
+}
