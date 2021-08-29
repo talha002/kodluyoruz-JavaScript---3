@@ -110,20 +110,21 @@ for (let i = 0; i < menu.length; i++) {
     menuChinese.push(menu[i]);
   };
 }
-console.log(menu)
-console.log(menuKorean)
-console.log(menuJapan)
-console.log(menuChinese)
-/* Menülerin eklenmesi */
-const menuContainerDOM = document.querySelector("#menu-container")
 
+/* Menülerin eklenmesi */
 function All() {
+  let sectionDOM = document.querySelector(".menu");
+  let oldMenuContainerDOM = document.querySelector("#menu-container");
+  oldMenuContainerDOM.remove();
+  let newMenuContainerDOM = document.createElement("div");
+  newMenuContainerDOM.classList.add("section-center","row");
+  newMenuContainerDOM.setAttribute("id", "menu-container");
+  sectionDOM.append(newMenuContainerDOM);
   for (let i = 0; i < menu.length; i++) {
-    let menuDOM = menu[i];
-    let titleDOM = menuDOM.title;
-    let priceDOM = menuDOM.price;
-    let imgDOM = menuDOM.img;
-    let descDOM = menuDOM.desc;
+    let titleDOM = menu[i].title;
+    let priceDOM = menu[i].price;
+    let imgDOM = menu[i].img;
+    let descDOM = menu[i].desc;
     menuItemsDOM = document.createElement("div");
     menuItemsDOM.classList.add("menu-items","col-lg-6", "col-sm-12");
     menuItemsDOM.innerHTML = `
@@ -137,6 +138,96 @@ function All() {
         ${descDOM}
       </div>
     </div>`;
-    menuContainerDOM.append(menuItemsDOM)
+    newMenuContainerDOM.append(menuItemsDOM)
+ }
+}
+
+function Korean() {
+  let sectionDOM = document.querySelector(".menu");
+  let oldMenuContainerDOM = document.querySelector("#menu-container");
+  oldMenuContainerDOM.remove();
+  let newMenuContainerDOM = document.createElement("div");
+  newMenuContainerDOM.classList.add("section-center","row");
+  newMenuContainerDOM.setAttribute("id", "menu-container");
+  sectionDOM.append(newMenuContainerDOM);
+  for (let i = 0; i < menuKorean.length; i++) {
+    let titleDOM = menuKorean[i].title;
+    let priceDOM = menuKorean[i].price;
+    let imgDOM = menuKorean[i].img;
+    let descDOM = menuKorean[i].desc;
+    menuItemsDOM = document.createElement("div");
+    menuItemsDOM.classList.add("menu-items","col-lg-6", "col-sm-12");
+    menuItemsDOM.innerHTML = `
+    <img src="${imgDOM}" alt="${titleDOM}" class="photo">
+    <div class="menu-info">
+      <div class="menu-title">
+        <h4>${titleDOM}</h4>
+        <h4 class="price">${priceDOM}</h4>
+      </div>
+      <div class="menu-text">
+        ${descDOM}
+      </div>
+    </div>`;
+    newMenuContainerDOM.append(menuItemsDOM)
+ }
+}
+
+function Japan() {
+  let sectionDOM = document.querySelector(".menu");
+  let oldMenuContainerDOM = document.querySelector("#menu-container");
+  oldMenuContainerDOM.remove();
+  let newMenuContainerDOM = document.createElement("div");
+  newMenuContainerDOM.classList.add("section-center","row");
+  newMenuContainerDOM.setAttribute("id", "menu-container");
+  sectionDOM.append(newMenuContainerDOM);
+  for (let i = 0; i < menuJapan.length; i++) {
+    let titleDOM = menuJapan[i].title;
+    let priceDOM = menuJapan[i].price;
+    let imgDOM = menuJapan[i].img;
+    let descDOM = menuJapan[i].desc;
+    menuItemsDOM = document.createElement("div");
+    menuItemsDOM.classList.add("menu-items","col-lg-6", "col-sm-12");
+    menuItemsDOM.innerHTML = `
+    <img src="${imgDOM}" alt="${titleDOM}" class="photo">
+    <div class="menu-info">
+      <div class="menu-title">
+        <h4>${titleDOM}</h4>
+        <h4 class="price">${priceDOM}</h4>
+      </div>
+      <div class="menu-text">
+        ${descDOM}
+      </div>
+    </div>`;
+    newMenuContainerDOM.append(menuItemsDOM)
+ }
+}
+
+function Chinese() {
+  let sectionDOM = document.querySelector(".menu");
+  let oldMenuContainerDOM = document.querySelector("#menu-container");
+  oldMenuContainerDOM.remove();
+  let newMenuContainerDOM = document.createElement("div");
+  newMenuContainerDOM.classList.add("section-center","row");
+  newMenuContainerDOM.setAttribute("id", "menu-container");
+  sectionDOM.append(newMenuContainerDOM);
+  for (let i = 0; i < menuChinese.length; i++) {
+    let titleDOM = menuChinese[i].title;
+    let priceDOM = menuChinese[i].price;
+    let imgDOM = menuChinese[i].img;
+    let descDOM = menuChinese[i].desc;
+    menuItemsDOM = document.createElement("div");
+    menuItemsDOM.classList.add("menu-items","col-lg-6", "col-sm-12");
+    menuItemsDOM.innerHTML = `
+    <img src="${imgDOM}" alt="${titleDOM}" class="photo">
+    <div class="menu-info">
+      <div class="menu-title">
+        <h4>${titleDOM}</h4>
+        <h4 class="price">${priceDOM}</h4>
+      </div>
+      <div class="menu-text">
+        ${descDOM}
+      </div>
+    </div>`;
+    newMenuContainerDOM.append(menuItemsDOM)
  }
 }
