@@ -94,6 +94,26 @@ buttons.forEach(item => {
   buttonsContainerDOM.append(buttonDOM)
 });
 
+/* Kategorilere göre menülerin tanımlanması */
+let menuKorean = []
+let menuJapan = []
+let menuChinese = []
+
+for (let i = 0; i < menu.length; i++) {
+  if (menu[i].category == "Korea"){
+    menuKorean.push(menu[i]);
+  }
+  else if (menu[i].category == "Japan"){
+    menuJapan.push(menu[i]);
+  }
+  else if (menu[i].category == "China"){
+    menuChinese.push(menu[i]);
+  };
+}
+console.log(menu)
+console.log(menuKorean)
+console.log(menuJapan)
+console.log(menuChinese)
 /* Menülerin eklenmesi */
 const menuContainerDOM = document.querySelector("#menu-container")
 
